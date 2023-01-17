@@ -1,9 +1,5 @@
-import {getToken} from '../lib/token/token';
-
-export const config = {
-  headers: {'x-token': getToken()}
-};
 
 export const enum HttpErrorMessage {
-  ON_LOGIN_REJECTED = 'Авторизация не удалась'
+  ON_LOGIN_REJECTED = 'Ошибка: авторизация не выполнена',
+  ON_LOGOUT_REJECTED = 'Ошибка: выход не выполнен',
 }

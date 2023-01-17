@@ -17,7 +17,7 @@ export const Login = createAsyncThunk<LoginData, LoginProps, {rejectValue: strin
       saveToken(response.data.token);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(HttpErrorMessage.ON_LOGIN_REJECTED as string);
+      return thunkAPI.rejectWithValue(HttpErrorMessage.ON_LOGIN_REJECTED);
     }
   }
 );
