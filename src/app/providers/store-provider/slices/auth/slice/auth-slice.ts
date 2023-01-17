@@ -16,6 +16,16 @@ export const AuthSlice = createSlice({
       .addCase(Login.pending, (state, action) => {
         state.authorizationStatus = 'UNKNOWN';
         state.userName = '';
+      })
+
+      .addCase(Login.fulfilled, (state, action) => {
+        state.authorizationStatus = 'YES';
+        state.userName = action.payload.email;
+      })
+
+      .addCase(Login.rejected, (state, action) => {
+        state.authorizationStatus = 'NO';
+        state.userName = '';
       });
   },
 });
