@@ -11,8 +11,6 @@ export const CheckAuth = createAsyncThunk<LoginData, undefined, {rejectValue: st
       const response = await axios.get<LoginData>(
         'https://grading.design.pages.academy/escape-room/login',
         {headers: {'x-token': getToken()}});
-      // eslint-disable-next-line no-console
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(HttpErrorMessage.ON_CHECK_AUTH_REJECTED);
