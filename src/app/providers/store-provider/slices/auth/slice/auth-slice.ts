@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import {AuthSchema} from '../types/auth-schema';
 import {Login} from '../services/login';
 import {Logout} from '../services/logout';
-//import {Logout} from '../services/logout';
 
 const initialState:AuthSchema = {
   authorizationStatus: 'UNKNOWN',
