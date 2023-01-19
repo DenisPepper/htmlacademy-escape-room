@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {LoginData} from '../types/auth-schema';
 import {saveToken} from '../../../../../../shared/lib/token/token';
-import {HttpErrorMessage} from '../../../../../../shared/http-client/http-client';
+import {HttpErrorMessage} from '../../../../../../shared/http-client/http-error-message';
 
 export interface LoginProps {
   email: string;

@@ -1,7 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 import {dropToken, getToken} from '../../../../../../shared/lib/token/token';
-import {HttpErrorMessage} from '../../../../../../shared/http-client/http-client';
+import {HttpErrorMessage} from '../../../../../../shared/http-client/http-error-message';
 
 export const Logout = createAsyncThunk<void, undefined, {rejectValue: string}>(
   'LOGOUT',

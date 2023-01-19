@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {getToken} from '../../../../../../shared/lib/token/token';
 import {LoginData} from '../types/auth-schema';
-import {HttpErrorMessage} from '../../../../../../shared/http-client/http-client';
+import {HttpErrorMessage} from '../../../../../../shared/http-client/http-error-message';
 
 
 export const CheckAuth = createAsyncThunk<LoginData, undefined, {rejectValue: string}>(
