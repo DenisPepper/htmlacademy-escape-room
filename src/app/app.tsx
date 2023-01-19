@@ -1,4 +1,4 @@
-import {AppRouter} from './providers/router/app-router';
+import {AppRouter} from './providers/app-router/app-router';
 import {useAppDispatch} from '../shared/lib/hooks/useAppDispatch';
 import {CheckAuth} from './providers/store-provider/slices/auth/services/check-auth';
 import {FetchQuests} from './providers/store-provider/slices/quests/services/fetch-quests';
