@@ -13,7 +13,7 @@ export default function AppHeaderMainNav(): JSX.Element {
           <AppLink to={AppRoutes.Contact}>Контакты</AppLink>
         </li>
         <li className="main-nav__item">
-          <AppLink to={AppRoutes.MyQuests}>Мои бронирования</AppLink>
+          <AppLink to={AppRoutes.MyQuests} hidden>Мои бронирования</AppLink>
         </li>
       </ul>
 
