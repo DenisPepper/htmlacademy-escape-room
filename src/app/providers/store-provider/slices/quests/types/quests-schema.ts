@@ -1,16 +1,4 @@
-const enum Level {
-  Easy = 'easy',
-  Medium = 'medium',
-  Hard = 'hard'
-}
-
-const enum Genre {
-  Adventures = 'adventures',
-  Horror = 'horror',
-  Mystic = 'mystic',
-  Detective = 'detective',
-  SciFi = 'sci-fi'
-}
+import {Genre, Level} from '../../../../../../shared/types/quest-types';
 
 type PeopleMinMaxType = [number, number];
 
