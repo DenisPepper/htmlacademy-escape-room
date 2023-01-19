@@ -4,6 +4,7 @@ import {getToken} from '../../../../../../shared/lib/token/token';
 import {LoginData} from '../types/auth-schema';
 import {HttpErrorMessage} from '../../../../../../shared/http-client/http-client';
 
+
 export const CheckAuth = createAsyncThunk<LoginData, undefined, {rejectValue: string}>(
   'CHECK_AUTH',
   async (_args, thunkAPI) => {

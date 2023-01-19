@@ -24,9 +24,6 @@ export default function AppLink(props: AppLinkProps): JSX.Element {
     }
   );
 
-  // eslint-disable-next-line no-console
-  console.log(classNames);
-
   return (
     <Link className={classNames} to={path}>
       {children}
