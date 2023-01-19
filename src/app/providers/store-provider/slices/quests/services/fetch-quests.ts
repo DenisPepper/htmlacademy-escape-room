@@ -1,8 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {QuestReducedInfo} from '../types/quests-schema';
 import {HttpErrorMessage} from '../../../../../../shared/http-client/http-client';
-
+import {QuestReducedInfo} from '../../../../../../shared/types/quest-types';
 
 export const FetchQuests = createAsyncThunk<QuestReducedInfo[], undefined, {rejectValue: string}>(
   'FETCH_QUESTS',

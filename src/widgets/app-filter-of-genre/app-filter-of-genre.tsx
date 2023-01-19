@@ -1,8 +1,6 @@
 import AppFieldset from '../app-fieldset/app-fieldset';
 import AppRadioInputOfGenre from '../app-radio-input-of-genre/app-radio-input-of-genre';
-import {buildGenreFilters} from '../../shared/lib/build-genre-filters/build-genre-filters';
-
-const filters = buildGenreFilters();
+import {genreFilters as filters} from '../../shared/lib/genre-filters/genre-filters';
 
 export default function AppFilterOfGenre(): JSX.Element {
 

@@ -6,13 +6,9 @@ export default function AppHeader():JSX.Element {
   return (
     <header className="header">
       <div className="container container--size-l">
-
         <AppHeaderLogo />
-
         <AppHeaderMainNav />
-
         <AppHeaderSideNav/>
-
       </div>
     </header>
   );

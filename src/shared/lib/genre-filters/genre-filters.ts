@@ -8,7 +8,7 @@ interface GenreFilter {
   iconHeight: string;
 }
 
-export const buildGenreFilters = ():GenreFilter[] => [
+export const genreFilters:GenreFilter[] = [
   { id: Genre.All,
     labelName: 'Все квесты',
     iconPath: 'icon-all-quests',

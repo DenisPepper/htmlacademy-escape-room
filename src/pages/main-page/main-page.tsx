@@ -1,18 +1,18 @@
-
 import AppPageTitle from '../../widgets/app-page-title/app-page-title';
 import AppFilterForm from '../../widgets/app-filter-form/app-filter-form';
+import AppPageHiddenTitle from '../../widgets/app-page-hidden-title/app-page-hidden-title';
+import AppQuestsList from '../../widgets/app-quests-list/app-quests-list';
 
 export default function MainPage(): JSX.Element {
-
-
   return (
     <main className={'page-content'}>
       <div className={'container'}>
         <AppPageTitle mainTitle={'Выберите тематику'} subTitle={'квесты в Санкт-Петербурге'}></AppPageTitle>
         <AppFilterForm/>
+        <AppPageHiddenTitle textContent='Выберите квест'/>
+        <AppQuestsList />
 
       </div>
-
     </main>
   );
 }
