@@ -1,9 +1,13 @@
 import {QuestsSchema} from '../types/quests-schema';
 import {createSlice} from '@reduxjs/toolkit';
-import {FetchQuests} from '../services/fetch-quests';
+import {FetchAllQuests} from '../services/fetch-all-quests';
+import {FetchQuestById} from '../services/fetch-quest-by-id';
+
 
 const initialState: QuestsSchema = {
-  list: []
+  list: [],
+  lastLoaded: null,
+  loading: false,
 };
 
 export const QuestsSlice = createSlice({
@@ -12,10 +16,19 @@ export const QuestsSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(FetchQuests.fulfilled, (state, action) => {
+      .addCase(FetchAllQuests.fulfilled, (state, action) => {
         state.list = action.payload;
-      }
-      );
+      })
+      .addCase(FetchQuestById.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(FetchQuestById.rejected, (state) => {
+        state.loading = false;
+      })
+      .addCase(FetchQuestById.fulfilled, (state, action) => {
+        state.lastLoaded = action.payload;
+        state.loading = false;
+      });
   }
 });
 

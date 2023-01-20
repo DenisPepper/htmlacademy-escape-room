@@ -48,7 +48,7 @@ export default function MainPage(): JSX.Element {
   };
 
   const handleOnClickFetch = () => {
-    dispatch(FetchQuests());
+    dispatch(FetchAllQuests());
   };
 
  */

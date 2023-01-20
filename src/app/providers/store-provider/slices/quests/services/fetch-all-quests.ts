@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {HttpErrorMessage} from '../../../../../../shared/http-client/http-error-message';
+import {HttpErrorMessage as errors} from '../../../../../../shared/http-client/http-error-message';
 import {QuestReducedInfo} from '../../../../../../shared/types/quest-types';
 
-export const FetchQuests = createAsyncThunk<QuestReducedInfo[], undefined, {rejectValue: string}>(
-  'FETCH_QUESTS',
+export const FetchAllQuests = createAsyncThunk<QuestReducedInfo[], undefined, {rejectValue: string}>(
+  'FETCH_ALL_QUESTS',
   async (_args, thunkAPI) => {
     try {
       const response = await axios.get<QuestReducedInfo[]>(
@@ -12,7 +12,7 @@ export const FetchQuests = createAsyncThunk<QuestReducedInfo[], undefined, {reje
       );
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(HttpErrorMessage.ON_FETCH_QUESTS_REJECTED);
+      return thunkAPI.rejectWithValue(errors.ON_FETCH_ALL_QUESTS_REJECTED);
     }
   }
 );
