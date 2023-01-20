@@ -10,8 +10,10 @@ import ContactPage from '../../../pages/contact-page/contact-page';
 import MyQuestsPage from '../../../pages/my-quests-page/my-quests-page';
 import BookingPage from '../../../pages/booking-page/booking-page';
 import AuthPage from '../../../pages/auth-page/auth-page';
+import QuestPage from '../../../pages/quest-page/quest-page';
 
 import RequireAuth from '../../../shared/lib/require-auth/require-auth';
+
 
 export function AppRouter(): JSX.Element {
   return (
@@ -19,6 +21,7 @@ export function AppRouter(): JSX.Element {
       <Routes>
         <Route path={AppRoutes.Main} element={<AppLayout />}>
           <Route index element={<MainPage />}/>
+          <Route path={AppRoutes.Quest} element={<QuestPage />}/>
           <Route path={AppRoutes.Contact} element={<ContactPage />}/>
           <Route
             path={AppRoutes.MyQuests}

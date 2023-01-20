@@ -1,6 +1,7 @@
 import {Level, PeopleMinMaxType} from '../../shared/types/quest-types';
 import {Link} from 'react-router-dom';
 import {levelFilters as filters} from '../../shared/lib/level-filters/level-filters';
+import {AppRoutes} from '../../shared/config/routes-config';
 
 interface AppQuestCardContentProps {
   title: string;
@@ -16,7 +17,7 @@ export default function AppQuestCardContent(props: AppQuestCardContentProps): JS
   return (
     <div className="quest-card__content">
       <div className="quest-card__info-wrapper">
-        <Link className={'quest-card__link'} to={'/contact'}>{title}</Link>
+        <Link className={'quest-card__link'} to={AppRoutes.Quest}>{title}</Link>
       </div>
       <ul className="tags quest-card__tags">
         <li className="tags__item">
