@@ -18,6 +18,7 @@ export default function AppQuestCard(props: AppQuestCardProps) {
         previewImgWebp={quest.previewImgWebp}
       />
       <AppQuestCardContent
+        id={quest.id}
         title={quest.title}
         level={quest.level}
         peopleMinMax={quest.peopleMinMax}

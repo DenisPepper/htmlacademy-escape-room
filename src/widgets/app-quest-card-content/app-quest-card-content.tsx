@@ -7,17 +7,18 @@ interface AppQuestCardContentProps {
   title: string;
   level: Level;
   peopleMinMax: PeopleMinMaxType;
+  id: number;
 }
 
 export default function AppQuestCardContent(props: AppQuestCardContentProps): JSX.Element {
-  const {title, level, peopleMinMax} = props;
+  const {title, level, peopleMinMax, id} = props;
   const [min , max] = peopleMinMax;
   const name = filters.find((filter) => filter.id === level)?.name;
 
   return (
     <div className="quest-card__content">
       <div className="quest-card__info-wrapper">
-        <Link className={'quest-card__link'} to={AppRoutes.Quest}>{title}</Link>
+        <Link className={'quest-card__link'} to={`${AppRoutes.Quest.replace(/:id/g, '' )}${id}`}>{title}</Link>
       </div>
       <ul className="tags quest-card__tags">
         <li className="tags__item">

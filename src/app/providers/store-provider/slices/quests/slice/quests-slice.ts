@@ -7,7 +7,7 @@ import {FetchQuestById} from '../services/fetch-quest-by-id';
 const initialState: QuestsSchema = {
   list: [],
   lastLoaded: null,
-  loading: false,
+  loading: true,
 };
 
 export const QuestsSlice = createSlice({
@@ -21,6 +21,7 @@ export const QuestsSlice = createSlice({
       })
       .addCase(FetchQuestById.pending, (state) => {
         state.loading = true;
+        state.lastLoaded = null;
       })
       .addCase(FetchQuestById.rejected, (state) => {
         state.loading = false;

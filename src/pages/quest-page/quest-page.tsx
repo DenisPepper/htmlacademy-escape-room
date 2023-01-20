@@ -24,6 +24,9 @@ export default function QuestPage(): JSX.Element {
     },
     [questID]);
 
+  // eslint-disable-next-line no-console
+  console.log('render QuestPage');
+
   return (
     <main className={'decorated-page quest-page'}>
       {isLoading ? <AppSpinner/> : <AppQuestPageContent/>}

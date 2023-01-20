@@ -7,6 +7,8 @@ import AppQuestContentPicture from '../app-quest-content-picture/app-quest-conte
 export default function AppQuestPageContent(): JSX.Element {
   const quest = useSelector(GetLastLoadedQuest);
 
+  // eslint-disable-next-line no-console
+  console.log(quest);
 
   return quest ? <AppQuestContentPicture/> : <div>данные не загружены</div>;
 }
