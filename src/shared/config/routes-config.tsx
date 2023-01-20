@@ -4,7 +4,7 @@ export const enum AppRoutes {
   Contact = '/contact',
   Quest = '/quest/:id',
   MyQuests = '/my-quests',
-  Booking = '/booking',
+  Booking = '/quest/:id/booking',
   NotFound = '/*',
 }
 

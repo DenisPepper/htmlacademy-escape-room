@@ -8,7 +8,6 @@ import {useAppDispatch} from '../../shared/lib/hooks/useAppDispatch';
 import {useNavigate} from 'react-router-dom';
 import {AppRoutes} from '../../shared/config/routes-config';
 
-
 const TIMER_DELAY = 5000;
 
 export default function AppHeaderAuthButton(): JSX.Element {
