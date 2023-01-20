@@ -1,15 +1,25 @@
+interface AppQuestContentPictureProps {
+  coverImg: string;
+  coverImgWebp: string;
+  previewImg: string;
+  previewImgWebp: string;
 
-export default function AppQuestContentPicture(): JSX.Element {
+}
+
+
+export default function AppQuestContentPicture(props: AppQuestContentPictureProps): JSX.Element {
+  const {previewImg, previewImgWebp, coverImg, coverImgWebp} = props;
+
   return (
     <div className="decorated-page__decor" aria-hidden="true">
       <picture>
         <source
           type='image/webp'
-          srcSet={'/img/content/maniac/maniac-size-m.webp, /img/content/maniac/maniac-size-m@2x.webp 2x'}
+          srcSet={`${previewImgWebp}, ${coverImgWebp} 2x`}
         />
         <img
-          src={'/img/content/maniac/maniac-size-m.jpg'}
-          srcSet={'/img/content/maniac/maniac-size-m@2x.jpg 2x'}
+          src={previewImg}
+          srcSet={`${coverImg} 2x`}
           width='1366'
           height='768'
           alt=''
@@ -20,3 +30,6 @@ export default function AppQuestContentPicture(): JSX.Element {
 }
 
 
+/*
+'/img/content/maniac/maniac-size-m.webp, /img/content/maniac/maniac-size-m@2x.webp 2x'
+ */
