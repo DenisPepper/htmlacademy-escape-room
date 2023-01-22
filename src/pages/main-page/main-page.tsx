@@ -11,7 +11,6 @@ export default function MainPage(): JSX.Element {
         <AppFilterForm/>
         <AppPageHiddenTitle textContent='Выберите квест'/>
         <AppQuestsList />
-
       </div>
     </main>
   );
