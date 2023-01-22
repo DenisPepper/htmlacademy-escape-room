@@ -4,5 +4,6 @@ export const enum HttpErrorMessage {
   ON_LOGOUT_REJECTED = 'Ошибка: выход не выполнен',
   ON_CHECK_AUTH_REJECTED = 'Ошибка: вы не авторизованы',
   ON_FETCH_ALL_QUESTS_REJECTED = 'Ошибка: список событий не загружен',
-  ON_FETCH_QUEST_BY_ID_REJECTED = 'Ошибка: список событий не загружен',
+  ON_FETCH_QUEST_BY_ID_REJECTED = 'Ошибка: квест не найден',
+  ON_FETCH_BOOKING_INFO_BY_ID_REJECTED = 'Ошибка: информация о квесте не найдена',
 }
