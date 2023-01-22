@@ -1,29 +1,18 @@
-import AppLoginForm from '../../widgets/app-login-form/app-login-form';
+import AppAuthMain from '../../widgets/app-auth-main/app-auth-main';
+import {Navigate, useLocation} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {getAuthStatus} from '../../app/providers/store-provider/slices/auth/selectors/get-auth-status/get-auth-status';
+import {AppRoutes} from '../../shared/config/routes-config';
 
 export default function AuthPage(): JSX.Element {
+  let pathAfterLogin = AppRoutes.Main as string;
+  const location = useLocation();
+  if (location.state) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
+    pathAfterLogin = `${AppRoutes.Quest.replace(/:id/, location.state.id)}`;
+  }
 
-  return (
-    <main className="decorated-page login">
-      <div className="decorated-page__decor" aria-hidden="true">
-        <picture>
-          <source
-            type='image/webp'
-            srcSet={'img/content/maniac/maniac-size-m.webp, img/content/maniac/maniac-size-m@2x.webp 2x'}
-          />
-          <img
-            src={'img/content/maniac/maniac-size-m.jpg'}
-            srcSet={'img/content/maniac/maniac-size-m@2x.jpg 2x'}
-            width='1366'
-            height='768'
-            alt=''
-          />
-        </picture>
-      </div>
-      <div className="container container--size-l">
-        <div className="login__form">
-          <AppLoginForm/>
-        </div>
-      </div>
-    </main>
-  );
+  const isAuth = useSelector(getAuthStatus) === 'YES';
+
+  return isAuth ? <Navigate to={pathAfterLogin}/> : <AppAuthMain/>;
 }

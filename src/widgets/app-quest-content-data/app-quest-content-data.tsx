@@ -4,6 +4,8 @@ import AppQuestContentGenre from '../app-quest-content-genre/app-quest-content-g
 import {levelFilters} from '../../shared/lib/level-filters/level-filters';
 import AppQuestCardTags from '../app-quest-card-tags/app-quest-card-tags';
 import {Link} from 'react-router-dom';
+import {AppRoutes} from '../../shared/config/routes-config';
+import {MAX_QUEST_DESCRIPTION_LENGTH} from '../../shared/config/settings-config';
 
 interface AppQuestContentDataProps {
   title: string;
@@ -11,10 +13,11 @@ interface AppQuestContentDataProps {
   level: Level;
   description: string;
   peopleMinMax: PeopleMinMaxType;
+  id: number;
 }
 
 export default function AppQuestContentData(props: AppQuestContentDataProps): JSX.Element {
-  const {title, type, level, description, peopleMinMax} = props;
+  const {title, type, level, description, peopleMinMax, id} = props;
   const typeName = genreFilters.find((filter) => filter.id === type)?.labelName || '';
   const levelName = levelFilters.find((filter) => filter.id === level)?.name || '';
   const [min , max] = peopleMinMax;
@@ -28,15 +31,10 @@ export default function AppQuestContentData(props: AppQuestContentDataProps): JS
         </p>
         <AppQuestCardTags name={levelName} min={min} max={max}/>
         <p className="quest-page__description">
-          {description}
+          {description.substring(0, MAX_QUEST_DESCRIPTION_LENGTH)}
         </p>
-        <Link to={'/'} className='btn btn--accent btn--cta quest-page__btn'>Забронировать</Link>
+        <Link to={`${AppRoutes.Booking.replace(/:id/, id.toString())}`} className='btn btn--accent btn--cta quest-page__btn'>Забронировать</Link>
       </div>
     </div>
   );
 }
-
-/*
-
-<a className="btn btn--accent btn--cta quest-page__btn" href="booking.html">Забронировать</a>;
-*/

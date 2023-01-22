@@ -20,7 +20,7 @@ export default function AppQuestCardContent(props: AppQuestCardContentProps): JS
   return (
     <div className="quest-card__content">
       <div className="quest-card__info-wrapper">
-        <Link className={'quest-card__link'} to={`${AppRoutes.Quest.replace(/:id/g, '' )}${id}`}>{title}</Link>
+        <Link className={'quest-card__link'} to={`${AppRoutes.Quest.replace(/:id/, id.toString())}`}>{title}</Link>
       </div>
       <AppQuestCardTags name={name} min={min} max={max}/>
     </div>

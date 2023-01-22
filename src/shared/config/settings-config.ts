@@ -1,3 +1,3 @@
 export const DECIMAL_RADIX = 10;
 
-export const DEBOUNCE_DELAY = 1000;
+export const MAX_QUEST_DESCRIPTION_LENGTH = 299;

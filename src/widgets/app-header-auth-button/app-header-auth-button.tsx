@@ -51,15 +51,3 @@ export default function AppHeaderAuthButton(): JSX.Element {
     </AppAnchor>
   );
 }
-
-/*
-
-const handleOnClick = () => {
-    setIsDisabled((prev) => true);
-    timerRef.current = setTimeout(() => {
-      setIsDisabled((prev) => false);
-    }, TIMER_DELAY);
-    isAuth ? dispatch(Logout()) : dispatch(Login({email: 'qwet@mail.ry', password: '159;lk'}));
-  };
-
- */

@@ -13,8 +13,8 @@ import QuestPage from '../../../pages/quest-page/quest-page';
 
 import RequireAuth from '../../../shared/lib/require-auth/require-auth';
 
-
 export function AppRouter(): JSX.Element {
+
   return (
     <Routes>
       <Route path={AppRoutes.Main} element={<AppLayout />}>

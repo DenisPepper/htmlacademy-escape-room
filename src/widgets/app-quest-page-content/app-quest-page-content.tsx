@@ -22,6 +22,7 @@ export default function AppQuestPageContent(): JSX.Element {
         level={quest.level}
         description={quest.description}
         peopleMinMax={quest.peopleMinMax}
+        id={quest.id}
       />
     </>
     :
