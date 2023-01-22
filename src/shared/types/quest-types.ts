@@ -1,3 +1,5 @@
+type Tuple = [number, number];
+
 export const enum Level {
   Any = 'any',
   Easy = 'easy',
@@ -14,7 +16,7 @@ export const enum Genre {
   SciFi = 'sci-fi'
 }
 
-export type PeopleMinMaxType = [number, number];
+export type PeopleMinMaxType = Tuple;
 
 export interface QuestInfo {
   id: number;
@@ -37,4 +39,17 @@ export interface QuestReducedInfo {
   level: Level;
   type: Genre;
   peopleMinMax: PeopleMinMaxType;
+}
+
+export type QuestCoords = Tuple;
+
+export interface QuestLocation {
+  id: number;
+  address: string;
+  coords: QuestCoords;
+}
+
+export interface QuestDate {
+  time: string;
+  isAvailable: boolean;
 }
