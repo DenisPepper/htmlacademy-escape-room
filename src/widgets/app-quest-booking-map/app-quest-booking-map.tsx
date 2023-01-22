@@ -6,10 +6,17 @@ import {
   GetBookingLastLoadedInfo
 } from '../../app/providers/store-provider/slices/booking/selectors/get-booking-last-loaded-info/get-booking-last-loaded-info';
 import {useSelector} from 'react-redux';
+import {useState} from 'react';
 
 export default function AppQuestBookingMap(): JSX.Element {
-
+  const [activeMarkerID, setActiveMarkerID] = useState(() => -1);
+  const [activeMarkerAdress, setActiveMarkerAdress] = useState(() => '');
   const info = useSelector(GetBookingLastLoadedInfo);
+
+  const handleOnMarkerClick = (id: number, desc: string) => {
+    setActiveMarkerID(id);
+    setActiveMarkerAdress(desc);
+  };
 
   return (
     <div className="page-content__item">
@@ -27,42 +34,15 @@ export default function AppQuestBookingMap(): JSX.Element {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               {info?.locations.map( (l) =>
-                <AppQuestBookingMarker key={l.id} position={l.coords} />)}
+                <AppQuestBookingMarker key={l.id} id={l.id} address={l.address} onClick={handleOnMarkerClick} position={l.coords} isActive={l.id === activeMarkerID}/>)}
             </MapContainer>
           </div>
         </div>
         <p className="booking-map__address">
-          {'Вы выбрали: '}
+          {`Вы выбрали: ${activeMarkerAdress}`}
         </p>
       </div>
     </div>
   );
 }
 
-
-/*
-function LocationMarker() {
-
-  const [position, setPosition] = useState(null);
-
-  const map = useMapEvents(
-
-    {
-      click() {
-        map.locate();
-      },
-      locationfound(e) {
-        setPosition(e.latlng);
-        map.flyTo(e.latlng, map.getZoom());
-      },
-    }
-
-  );
-
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  );
-}
-*/
