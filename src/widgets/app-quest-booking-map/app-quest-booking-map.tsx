@@ -5,7 +5,9 @@ export default function AppQuestBookingMap(): JSX.Element {
         <div className="map">
           <div className="map__container"></div>
         </div>
-        <p className="booking-map__address">Вы&nbsp;выбрали: наб. реки Карповки&nbsp;5, лит&nbsp;П, м. Петроградская</p>
+        <p className="booking-map__address">
+          {'Вы выбрали: '}
+        </p>
       </div>
     </div>
   );
