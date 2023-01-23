@@ -7,13 +7,18 @@ import {
 } from '../../app/providers/store-provider/slices/booking/selectors/get-booking-last-loaded-info/get-booking-last-loaded-info';
 import {useSelector} from 'react-redux';
 import {useState} from 'react';
+import {useAppDispatch} from '../../shared/lib/hooks/useAppDispatch';
+import {bookingActions} from '../../app/providers/store-provider/slices/booking/slice/booking-slice';
+
 
 export default function AppQuestBookingMap(): JSX.Element {
   const [activeMarkerID, setActiveMarkerID] = useState(() => -1);
   const [activeMarkerAddress, setActiveMarkerAddress] = useState(() => '');
   const info = useSelector(GetBookingLastLoadedInfo);
+  const dispatch = useAppDispatch();
 
   const handleOnMarkerClick = (id: number, desc: string) => {
+    dispatch(bookingActions.setLocationID(id));
     setActiveMarkerID(id);
     setActiveMarkerAddress(desc);
   };

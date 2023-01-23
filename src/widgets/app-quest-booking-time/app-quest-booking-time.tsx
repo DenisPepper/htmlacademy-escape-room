@@ -30,6 +30,3 @@ export default function AppQuestBookingTime(props: AppQuestBookingTimeProps): JS
   );
 
 }
-
-
-//<input type="radio" id="today15h00m" name="date" checked required value="today15h00m"/>
