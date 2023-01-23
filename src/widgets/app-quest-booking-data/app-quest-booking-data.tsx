@@ -1,7 +1,7 @@
 import AppQuestBookingTitle from '../app-quest-booking-title/app-quest-booking-title';
 import {useAppDispatch} from '../../shared/lib/hooks/useAppDispatch';
 import {
-  GetQuestLoadingStatus
+  GetBookingLoadingStatus
 } from '../../app/providers/store-provider/slices/booking/selectors/get-booking-loading-status/get-booking-loading-status';
 import {useSelector} from 'react-redux';
 import AppQuestBookingMap from '../app-quest-booking-map/app-quest-booking-map';
@@ -18,7 +18,7 @@ interface AppQuestBookingDataProps {
 
 export default function AppQuestBookingData(props: AppQuestBookingDataProps) {
   const {id, title} = props;
-  const isLoaded = useSelector(GetQuestLoadingStatus);
+  const isLoaded = useSelector(GetBookingLoadingStatus);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
