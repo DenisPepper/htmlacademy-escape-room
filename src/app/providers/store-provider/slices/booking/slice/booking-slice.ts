@@ -27,6 +27,18 @@ export const BookingSlice = createSlice( {
     setTime: (state, action: PayloadAction<string>) => {
       state.time = action.payload;
     },
+    setContactPerson: (state, action: PayloadAction<string>) => {
+      state.contactPerson = action.payload;
+    },
+    setPhone: (state, action: PayloadAction<string>) => {
+      state.phone = action.payload;
+    },
+    setWithChildren: (state, action: PayloadAction<boolean>) => {
+      state.withChildren = action.payload;
+    },
+    setPeopleCount: (state, action: PayloadAction<number>) => {
+      state.peopleCount = action.payload;
+    },
     setLocationID: (state, action: PayloadAction<number>) => {
       state.locationId = action.payload;
     },
@@ -38,12 +50,16 @@ export const BookingSlice = createSlice( {
         state.questId = null;
       })
       .addCase(FetchBookingInfoById.fulfilled, (state, action) => {
-        state.lastLoadedBookingInfo = action.payload;
         state.isLoaded = true;
+        state.lastLoadedBookingInfo = action.payload;
+        state.date = null;
+        state.time = null;
+        state.contactPerson = null;
+        state.phone = null;
+        state.withChildren = null;
+        state.peopleCount = null;
+        state.locationId = null;
         state.questId = action.payload.id;
-      })
-      .addCase(FetchBookingInfoById.rejected, (state, action) => {
-        state.isLoaded = false;
       });
   }
 });
