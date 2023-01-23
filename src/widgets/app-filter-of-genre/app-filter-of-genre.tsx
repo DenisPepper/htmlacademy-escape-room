@@ -1,11 +1,11 @@
-import AppFieldset from '../app-fieldset/app-fieldset';
+import AppFilterFieldset from '../app-filter-fieldset/app-filter-fieldset';
 import AppRadioInputOfGenre from '../app-radio-input-of-genre/app-radio-input-of-genre';
 import {genreFilters as filters} from '../../shared/lib/genre-filters/genre-filters';
 
 export default function AppFilterOfGenre(): JSX.Element {
 
   return (
-    <AppFieldset legendName='Тематика'>
+    <AppFilterFieldset legendName='Тематика'>
       <ul className='filter__list'>
         {
           filters.map((item) =>
@@ -23,7 +23,7 @@ export default function AppFilterOfGenre(): JSX.Element {
           )
         }
       </ul>
-    </AppFieldset>
+    </AppFilterFieldset>
   );
 }
 

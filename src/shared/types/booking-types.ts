@@ -9,3 +9,19 @@ export interface QuestBookingInfo{
   };
 }
 
+export const enum BookingDate{
+  Today = 'today',
+  Tomorrow = 'tomorrow',
+}
+
+export interface BookingRecord{
+  date: BookingDate;
+  time: string;
+  contactPerson: string;
+  phone: string;
+  withChildren: boolean;
+  peopleCount: number;
+  locationId: number;
+  questId: number;
+}
+

@@ -3,7 +3,7 @@ interface AppFieldsetProps {
   children: JSX.Element;
 }
 
-export default function AppFieldset(props: AppFieldsetProps): JSX.Element {
+export default function AppFilterFieldset(props: AppFieldsetProps): JSX.Element {
   const { children, legendName = ''} = props;
 
   return (

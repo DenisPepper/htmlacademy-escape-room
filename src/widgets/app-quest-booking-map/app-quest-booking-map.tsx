@@ -10,12 +10,12 @@ import {useState} from 'react';
 
 export default function AppQuestBookingMap(): JSX.Element {
   const [activeMarkerID, setActiveMarkerID] = useState(() => -1);
-  const [activeMarkerAdress, setActiveMarkerAdress] = useState(() => '');
+  const [activeMarkerAddress, setActiveMarkerAddress] = useState(() => '');
   const info = useSelector(GetBookingLastLoadedInfo);
 
   const handleOnMarkerClick = (id: number, desc: string) => {
     setActiveMarkerID(id);
-    setActiveMarkerAdress(desc);
+    setActiveMarkerAddress(desc);
   };
 
   return (
@@ -39,7 +39,7 @@ export default function AppQuestBookingMap(): JSX.Element {
           </div>
         </div>
         <p className="booking-map__address">
-          {`Вы выбрали: ${activeMarkerAdress}`}
+          {`Вы выбрали: ${activeMarkerAddress}`}
         </p>
       </div>
     </div>
