@@ -11,4 +11,5 @@ export interface BookingSchema {
   peopleCount: number | null;
   locationId: number | null;
   questId: number | null;
+  agree: boolean | null;
 }

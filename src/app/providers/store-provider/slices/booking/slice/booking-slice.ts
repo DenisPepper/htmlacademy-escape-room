@@ -14,7 +14,8 @@ const initialState: BookingSchema = {
   withChildren: null,
   peopleCount: null,
   locationId: null,
-  questId: null
+  questId: null,
+  agree: null,
 };
 
 export const BookingSlice = createSlice( {
@@ -59,6 +60,7 @@ export const BookingSlice = createSlice( {
         state.withChildren = null;
         state.peopleCount = null;
         state.locationId = null;
+        state.agree = false;
         state.questId = action.payload.id;
       });
   }
